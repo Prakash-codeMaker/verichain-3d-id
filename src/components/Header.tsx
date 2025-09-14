@@ -38,25 +38,33 @@ const Header = () => {
             <a href="#features" className="text-foreground hover:text-primary transition-colors">
               Features
             </a>
-            <a href="#security" className="text-foreground hover:text-primary transition-colors">
+            <a href="/security" className="text-foreground hover:text-primary transition-colors">
               Security
             </a>
             <a href="#docs" className="text-foreground hover:text-primary transition-colors">
               Documentation
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+            <a href="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.open('#wallet', '_blank')}
+            >
               <Wallet className="w-4 h-4" />
               Connect Wallet
             </Button>
-            <Button variant="hero" size="sm">
-              Launch App
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => window.location.href = '/auth'}
+            >
+              Sign In
             </Button>
           </div>
 
@@ -89,7 +97,7 @@ const Header = () => {
                 Features
               </a>
               <a
-                href="#security"
+                href="/security"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -103,19 +111,29 @@ const Header = () => {
                 Documentation
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <div className="flex flex-col gap-3 pt-4 border-t border-border/50">
-                <Button variant="outline" size="sm" className="w-full">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => window.open('#wallet', '_blank')}
+                >
                   <Wallet className="w-4 h-4" />
                   Connect Wallet
                 </Button>
-                <Button variant="hero" size="sm" className="w-full">
-                  Launch App
+                <Button 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => window.location.href = '/auth'}
+                >
+                  Sign In
                 </Button>
               </div>
             </nav>
